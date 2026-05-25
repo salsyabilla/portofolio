@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sabrina Rosa Salsyabilla — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">Sabrina<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#organization">Organization</a></li>
+    <li><a href="#volunteer">Volunteer</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+  <button class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#about" class="mobile-link">About</a></li>
+    <li><a href="#skills" class="mobile-link">Skills</a></li>
+    <li><a href="#projects" class="mobile-link">Projects</a></li>
+    <li><a href="#organization" class="mobile-link">Organization</a></li>
+    <li><a href="#volunteer" class="mobile-link">Volunteer</a></li>
+    <li><a href="#certificates" class="mobile-link">Certificates</a></li>
+    <li><a href="#contact" class="mobile-link">Contact</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
+  <div class="hero-noise"></div>
+
+  <div class="hero-text">
+    <div class="hero-tag">
+      <span class="tag-dot"></span>
+      Available for Internship & Collaboration
+    </div>
+    <h1 class="hero-name">
+      Sabrina Rosa<br/>
+      <em>Salsyabilla</em>
+    </h1>
+    <p class="hero-title">Informatics Engineering Student <span class="title-sep">·</span> Fullstack Developer</p>
+    <p class="hero-desc">A 4th-semester Informatics Engineering student at Batam State Polytechnic, passionate about building thoughtful, high-quality web applications. Skilled in both frontend and backend development with hands-on experience delivering real-world client projects.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">
+        <span>View My Work</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">3.92</div>
+        <div class="stat-label">GPA</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Projects</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Org & Vol</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <div class="hero-img-frame">
+      <div class="hero-img-blob"></div>
+      <div class="hero-img-ring"></div>
+      <img src="assets/images/foto_sabrina.jpeg" alt="Sabrina" class="hero-photo"/>
+      <div class="hero-img-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Fullstack Dev
+      </div>
+    </div>
+    <!-- floating chips -->
+    <div class="float-chip chip-1">Next.js</div>
+    <div class="float-chip chip-2">Laravel</div>
+    <div class="float-chip chip-3">TypeScript</div>
+  </div>
+
+  <a href="#about" class="scroll-hint">
+    <div class="scroll-hint-inner"></div>
+  </a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner fade-in">
+    <div class="section-header">
+      <div class="section-tag">Who I Am</div>
+      <h2 class="section-title">About Me</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm <strong>Sabrina Rosa Salsyabilla</strong>, an Informatics Engineering student at Batam State Polytechnic with a strong passion for building meaningful web-based applications. I thrive at the intersection of design and technology — turning ideas into clean, functional digital experiences.</p>
+        <p>With hands-on experience across <strong>Next.js, Laravel, PHP, TypeScript, and MySQL</strong>, I've contributed to real-world client projects from end to end — designing system flows, building REST APIs, and crafting user interfaces that are both intuitive and elegant.</p>
+        <p>Beyond code, I'm an active campus leader, public speaker, and community volunteer who believes that technology should serve people and create genuine impact.</p>
+        <div class="about-info">
+          <div class="info-item">
+            <div class="info-label">📍 Location</div>
+            <div class="info-val">Batam, Indonesia</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">✉️ Email</div>
+            <div class="info-val">Salsyabillarosa@gmail.com</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">⚡ Focus</div>
+            <div class="info-val">Fullstack Development</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">🟢 Status</div>
+            <div class="info-val">Open to opportunities</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-edu">
+        <div class="edu-card">
+          <div class="edu-year">2024 — Present</div>
+          <div class="edu-inst">Batam State Polytechnic</div>
+          <div class="edu-degree">Diploma III — Informatics Engineering</div>
+          <div class="edu-gpa">⭐ GPA 3.92 / 4.00</div>
+          <p class="edu-desc">Studying software development, database systems, system analysis, and web application development. Actively building real-world projects and contributing to campus organizations throughout the program.</p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-year">Graduated 2024</div>
+          <div class="edu-inst">SMAIT IQRA Kota Bengkulu</div>
+          <div class="edu-degree">Science Major (IPA)</div>
+          <div class="edu-gpa">⭐ Final Score · 89.89</div>
+          <p class="edu-desc">Completed senior high school education with a science concentration, focusing on analytical thinking and academic excellence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner fade-in">
+    <div class="section-header">
+      <div class="section-tag">What I Work With</div>
+      <h2 class="section-title">Skills & Tools</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-container">
+      <div class="skill-group">
+        <div class="skill-group-icon">💻</div>
+        <div class="skill-group-title">Programming & Development</div>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML</span><span class="skill-tag">CSS</span>
+          <span class="skill-tag">JavaScript</span><span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">PHP</span><span class="skill-tag">Next.js</span>
+          <span class="skill-tag">React.js</span><span class="skill-tag">Laravel</span>
+          <span class="skill-tag">MySQL</span><span class="skill-tag">REST API</span>
+          <span class="skill-tag">Tailwind CSS</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-icon">🎨</div>
+        <div class="skill-group-title">Design & Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Figma</span><span class="skill-tag">Canva</span>
+          <span class="skill-tag">Wireframing</span><span class="skill-tag">GitHub</span>
+          <span class="skill-tag">Postman</span><span class="skill-tag">Laragon</span>
+          <span class="skill-tag">XAMPP</span><span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Microsoft Office</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-icon">🤝</div>
+        <div class="skill-group-title">Soft Skills</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Teamwork</span><span class="skill-tag">Communication</span>
+          <span class="skill-tag">Problem Solving</span><span class="skill-tag">Public Speaking</span>
+          <span class="skill-tag">Leadership</span><span class="skill-tag">Adaptability</span>
+        </div>
+      </div>
+    </div>
+    <div class="skills-ticker-wrap">
+      <div class="skills-ticker">
+        <span class="skill-tag">Next.js</span><span class="skill-tag">Laravel</span><span class="skill-tag">TypeScript</span><span class="skill-tag">MySQL</span><span class="skill-tag">REST API</span><span class="skill-tag">Figma</span><span class="skill-tag">GitHub</span><span class="skill-tag">Tailwind CSS</span><span class="skill-tag">PHP</span><span class="skill-tag">React.js</span><span class="skill-tag">Postman</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Public Speaking</span><span class="skill-tag">Leadership</span>
+        <span class="skill-tag">Next.js</span><span class="skill-tag">Laravel</span><span class="skill-tag">TypeScript</span><span class="skill-tag">MySQL</span><span class="skill-tag">REST API</span><span class="skill-tag">Figma</span><span class="skill-tag">GitHub</span><span class="skill-tag">Tailwind CSS</span><span class="skill-tag">PHP</span><span class="skill-tag">React.js</span><span class="skill-tag">Postman</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Public Speaking</span><span class="skill-tag">Leadership</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner fade-in">
+    <div class="section-header">
+      <div class="section-tag">What I've Built</div>
+      <h2 class="section-title">Project Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <!-- SIMONEV -->
+      <div class="project-card" data-project="simonev">
+        <div class="project-card-bg"></div>
+        <div class="project-number">01</div>
+        <div class="project-content">
+          <div class="project-client">Client: TK Almuhajirin Dotamana</div>
+          <div class="project-name">SIMONEV</div>
+          <div class="project-role">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+            Fullstack Developer · 2-person team
+          </div>
+          <p class="project-desc">An early childhood development monitoring and evaluation system built for a kindergarten. The platform enables teachers to record and track child development, while parents monitor progress in real time.</p>
+          <div class="project-techs">
+            <span class="tech-badge">Next.js</span>
+            <span class="tech-badge">Laravel</span>
+            <span class="tech-badge">MySQL</span>
+            <span class="tech-badge">REST API</span>
+            <span class="tech-badge">TypeScript</span>
+          </div>
+          <button class="project-detail-btn" onclick="openProjectModal('simonev')">
+            <span>View Details</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        <div class="project-mockup">
+          <div class="mockup-browser">
+            <div class="mockup-bar">
+              <span></span><span></span><span></span>
+              <div class="mockup-url">simonev.app</div>
+            </div>
+            <div class="mockup-screen simonev-screen">
+              <div class="screen-placeholder">
+                <div class="sp-header">
+                  <div class="sp-logo"></div>
+                  <div class="sp-nav">
+                    <div class="sp-nav-item"></div>
+                    <div class="sp-nav-item"></div>
+                    <div class="sp-nav-item active"></div>
+                  </div>
+                </div>
+                <div class="sp-content">
+                  <div class="sp-title"></div>
+                  <div class="sp-cards">
+                    <div class="sp-card"></div>
+                    <div class="sp-card"></div>
+                    <div class="sp-card"></div>
+                  </div>
+                  <div class="sp-table">
+                    <div class="sp-row"></div>
+                    <div class="sp-row"></div>
+                    <div class="sp-row"></div>
+                    <div class="sp-row"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIMKARIN -->
+      <div class="project-card" data-project="simkarin">
+        <div class="project-card-bg"></div>
+        <div class="project-number">02</div>
+        <div class="project-content">
+          <div class="project-client">Client: PT Lancang Kuning Sukses</div>
+          <div class="project-name">SIMKARIN</div>
+          <div class="project-role">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+            Fullstack Developer · 4-person team
+          </div>
+          <p class="project-desc">A web-based employee database management system developed for a corporate client. Streamlines employee data management, organizational structures, and document workflows.</p>
+          <div class="project-techs">
+            <span class="tech-badge">Next.js</span>
+            <span class="tech-badge">Laravel</span>
+            <span class="tech-badge">MySQL</span>
+            <span class="tech-badge">REST API</span>
+          </div>
+          <button class="project-detail-btn" onclick="openProjectModal('simkarin')">
+            <span>View Details</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        <div class="project-mockup">
+          <div class="mockup-browser">
+            <div class="mockup-bar">
+              <span></span><span></span><span></span>
+              <div class="mockup-url">simkarin.app</div>
+            </div>
+            <div class="mockup-screen simkarin-screen">
+              <div class="screen-placeholder">
+                <div class="sp-header">
+                  <div class="sp-logo"></div>
+                  <div class="sp-nav">
+                    <div class="sp-nav-item"></div>
+                    <div class="sp-nav-item active"></div>
+                    <div class="sp-nav-item"></div>
+                  </div>
+                </div>
+                <div class="sp-content">
+                  <div class="sp-title"></div>
+                  <div class="sp-cards">
+                    <div class="sp-card"></div>
+                    <div class="sp-card"></div>
+                    <div class="sp-card"></div>
+                  </div>
+                  <div class="sp-table">
+                    <div class="sp-row"></div>
+                    <div class="sp-row"></div>
+                    <div class="sp-row"></div>
+                    <div class="sp-row"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LE-PORTRAIT -->
+      <div class="project-card" data-project="leportrait">
+        <div class="project-card-bg"></div>
+        <div class="project-number">03</div>
+        <div class="project-content">
+          <div class="project-client">Academic Project</div>
+          <div class="project-name">Le-Portrait</div>
+          <div class="project-role">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+            Fullstack Developer · 4-person team
+          </div>
+          <p class="project-desc">A camera and accessories e-commerce application with complete transaction management. Features product catalog, shopping cart, order processing, payment integration, and admin panel.</p>
+          <div class="project-techs">
+            <span class="tech-badge">Laravel</span>
+            <span class="tech-badge">MySQL</span>
+            <span class="tech-badge">PHP</span>
+          </div>
+          <button class="project-detail-btn" onclick="openProjectModal('leportrait')">
+            <span>View Details</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        <div class="project-mockup">
+          <div class="mockup-browser">
+            <div class="mockup-bar">
+              <span></span><span></span><span></span>
+              <div class="mockup-url">le-portrait.store</div>
+            </div>
+            <div class="mockup-screen leportrait-screen">
+              <div class="screen-placeholder">
+                <div class="sp-header">
+                  <div class="sp-logo"></div>
+                  <div class="sp-nav">
+                    <div class="sp-nav-item"></div>
+                    <div class="sp-nav-item"></div>
+                    <div class="sp-nav-item active"></div>
+                  </div>
+                </div>
+                <div class="sp-content">
+                  <div class="sp-title"></div>
+                  <div class="sp-product-grid">
+                    <div class="sp-product"></div>
+                    <div class="sp-product"></div>
+                    <div class="sp-product"></div>
+                    <div class="sp-product"></div>
+                    <div class="sp-product"></div>
+                    <div class="sp-product"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ORGANIZATION -->
+<section id="organization">
+  <div class="section-inner fade-in">
+    <div class="section-header">
+      <div class="section-tag">Campus Involvement</div>
+      <h2 class="section-title">Organization Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="org-timeline">
+      <div class="org-card">
+        <div class="org-dot"></div>
+        <div class="org-card-inner">
+          <div class="org-period-badge">Mar 2025 — Feb 2026</div>
+          <div class="org-name">Student Executive Board (BEM)</div>
+          <div class="org-role">Active Member · Batam State Polytechnic</div>
+          <ul class="org-desc">
+            <li>Actively supported and organized campus events and student programs throughout the academic year.</li>
+            <li>Served as Master of Ceremony and moderator for seminars, workshops, and student activity events.</li>
+            <li>Collaborated with cross-functional teams to ensure smooth execution of organizational programs.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="org-card">
+        <div class="org-dot"></div>
+        <div class="org-card-inner">
+          <div class="org-period-badge">August 2025</div>
+          <div class="org-name">Master of Ceremony & Moderator</div>
+          <div class="org-role">MC & Moderator · Batam State Polytechnic</div>
+          <ul class="org-desc">
+            <li>Served as official MC and moderator for PKKMB Polibatam 2025 — the university's new student orientation program.</li>
+            <li>Facilitated panel discussions and campus-wide events with confidence and professionalism.</li>
+            <li>Continuously refined public speaking, stage presence, and communication skills through active participation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER -->
+<section id="volunteer">
+  <div class="section-inner fade-in">
+    <div class="section-header">
+      <div class="section-tag">Giving Back</div>
+      <h2 class="section-title">Volunteer Experience</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- SEMBULANG -->
+    <div class="volunteer-card fade-in">
+      <div class="volunteer-card-header">
+        <div class="volunteer-org">Community Service Program — Batam State Polytechnic</div>
+        <div class="volunteer-title">Community Service in Sembulang, Batam</div>
+        <div class="volunteer-period">📅 December 2025 · Sembulang, Batam</div>
+      </div>
+      <div class="volunteer-body">
+        <div class="volunteer-desc">
+          <p>Alongside fellow students from Batam State Polytechnic, we traveled to Sembulang — a remote island area in Batam with limited infrastructure and electricity. We didn't come only to help, but also to listen, learn, and grow alongside the community.</p>
+          <ul>
+            <li><strong>Solar-powered street light installation</strong> — Built and installed solar street lights to improve safety and visibility in areas without electricity.</li>
+            <li><strong>Educational workshops for children</strong> — Interactive sessions encouraging children to dream bigger, build confidence, and pursue education.</li>
+            <li><strong>Community social activities</strong> — Organized bonding activities, environmental clean-ups, and collaborative programs with local residents.</li>
+          </ul>
+        </div>
+        <div class="volunteer-gallery">
+          <div class="gallery-wrapper">
+            <button class="gallery-btn prev">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div class="gallery-slider">
+              <img src="assets/images/sembulang1.jpeg" class="gallery-img" onclick="openLightbox(this.src)" alt="Sembulang 1"/>
+              <img src="assets/images/sembulang2.jpeg" class="gallery-img" onclick="openLightbox(this.src)" alt="Sembulang 2"/>
+              <img src="assets/images/sembulang3.jpeg" class="gallery-img" onclick="openLightbox(this.src)" alt="Sembulang 3"/>
+              <img src="assets/images/sembulang4.jpeg" class="gallery-img" onclick="openLightbox(this.src)" alt="Sembulang 4"/>
+              <img src="assets/images/sembulang5.jpeg" class="gallery-img" onclick="openLightbox(this.src)" alt="Sembulang 5"/>
+            </div>
+            <button class="gallery-btn next">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELAWAN SATU ASA -->
+    <div class="volunteer-card fade-in">
+      <div class="volunteer-card-header">
+        <div class="volunteer-org">Komunitas Relawan Satu Asa</div>
+        <div class="volunteer-title">Volunteer Member</div>
+        <div class="volunteer-period">📅 September 2025 — February 2026</div>
+      </div>
+      <div class="volunteer-body">
+        <div class="volunteer-desc">
+          <p>Participated in community-driven volunteer programs focused on social welfare, environmental awareness, and youth empowerment initiatives.</p>
+          <ul>
+            <li>Fundraising activities for natural disaster victims.</li>
+            <li>Environmental clean-up programs with local communities.</li>
+            <li>Social service activities at orphanages and community centers.</li>
+            <li>Educational and motivational sessions for children.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BATAM CAMPUS EXPO -->
+    <div class="volunteer-card fade-in">
+      <div class="volunteer-card-header">
+        <div class="volunteer-org">Batam Campus Expo 2026</div>
+        <div class="volunteer-title">Event Organizing Committee</div>
+        <div class="volunteer-period">📅 2026</div>
+      </div>
+      <div class="volunteer-body">
+        <div class="volunteer-desc">
+          <p>Contributed as part of the organizing committee for Batam Campus Expo 2026, supporting event preparation, coordination, and execution.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates">
+  <div class="section-inner fade-in">
+    <div class="section-header">
+      <div class="section-tag">Recognition</div>
+      <h2 class="section-title">Certificates</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card" onclick="openLightbox(this.querySelector('img').src)">
+        <div class="cert-img-wrap">
+          <img src="assets/images/sertifikat-pengabdian.jpeg" class="cert-img" alt="Certificate"/>
+          <div class="cert-overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+            Click to enlarge
+          </div>
+        </div>
+        <div class="cert-info">
+          <div class="cert-title">Certificate of Participation — Pengabdian BEM X KORSA 2025</div>
+          <div class="cert-issuer">BEM · Politeknik Negeri Batam</div>
+          <div class="cert-date">Nov 20–23, 2025 · Committee Member</div>
+        </div>
+      </div>
+    </div>
+    <p class="cert-more">More certificates coming soon ✦</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner fade-in">
+    <div class="contact-glow"></div>
+    <div class="section-tag">Let's Connect</div>
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="section-line" style="margin:0 auto 2rem;"></div>
+    <p class="contact-intro">I'm always open to new opportunities, collaborations, and conversations. Whether it's a project, an internship, or just a hello — feel free to reach out!</p>
+    <div class="contact-links">
+      <a href="mailto:Salsyabillarosa@gmail.com" class="contact-link">
+        <div class="contact-link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <div class="contact-link-text">
+          <div class="contact-link-label">Email</div>
+          <div class="contact-link-val">Salsyabillarosa@gmail.com</div>
+        </div>
+      </a>
+      <a href="https://linkedin.com/in/sabrinarosasalsyabilla" target="_blank" class="contact-link">
+        <div class="contact-link-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </div>
+        <div class="contact-link-text">
+          <div class="contact-link-label">LinkedIn</div>
+          <div class="contact-link-val">sabrinarosasalsyabilla</div>
+        </div>
+      </a>
+      <a href="https://github.com/salsyabilla" target="_blank" class="contact-link">
+        <div class="contact-link-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </div>
+        <div class="contact-link-text">
+          <div class="contact-link-label">GitHub</div>
+          <div class="contact-link-val">salsyabilla</div>
+        </div>
+      </a>
+      <a href="https://wa.me/6289534040904" target="_blank" class="contact-link">
+        <div class="contact-link-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.533 5.844L.057 23.514a.5.5 0 0 0 .609.637l5.805-1.523A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.95 9.95 0 0 1-5.194-1.453l-.371-.221-3.846 1.009 1.027-3.753-.242-.389A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        </div>
+        <div class="contact-link-text">
+          <div class="contact-link-label">WhatsApp</div>
+          <div class="contact-link-val">+62 895 3404 0904</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Sabrina<span>.</span></div>
+    <p>© 2025 Sabrina Rosa Salsyabilla · Crafted with care ✦</p>
+    <a href="#hero" class="back-to-top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+    </a>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+  <button class="lightbox-close" onclick="closeLightbox()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt=""/>
+</div>
+
+<!-- PROJECT MODAL -->
+<div class="project-modal" id="projectModal">
+  <div class="modal-backdrop" onclick="closeProjectModal()"></div>
+  <div class="modal-panel">
+    <button class="modal-close" onclick="closeProjectModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="modal-header">
+      <div class="modal-client" id="modal-client"></div>
+      <div class="modal-name" id="modal-name"></div>
+      <div class="modal-role" id="modal-role"></div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-desc" id="modal-desc"></div>
+      <div class="modal-techs" id="modal-techs"></div>
+      <!-- Screenshot gallery inside modal -->
+      <div class="modal-screenshots">
+        <div class="modal-ss-label">Screenshots</div>
+        <div class="modal-ss-grid" id="modal-ss-grid">
+          <!-- Screenshot slots — replace src with actual images -->
+          <div class="ss-slot" id="modal-ss-1">
+            <div class="ss-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Add screenshot here</span>
+            </div>
+          </div>
+          <div class="ss-slot" id="modal-ss-2">
+            <div class="ss-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Add screenshot here</span>
+            </div>
+          </div>
+          <div class="ss-slot" id="modal-ss-3">
+            <div class="ss-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Add screenshot here</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
