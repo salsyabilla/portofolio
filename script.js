@@ -1,229 +1,213 @@
-/* =============================================
-   SABRINA ROSA SALSYABILLA — PORTFOLIO JS
-   ============================================= */
-
-/* ─── CUSTOM CURSOR ─── */
-const cursorDot  = document.querySelector('.cursor-dot');
-const cursorRing = document.querySelector('.cursor-ring');
-
-let mouseX = 0, mouseY = 0;
-let ringX  = 0, ringY  = 0;
-
+// ═══════════════════════════════════════════════
+// CURSOR
+// ═══════════════════════════════════════════════
+const dot  = document.querySelector('.cursor-dot');
+const ring = document.querySelector('.cursor-ring');
 document.addEventListener('mousemove', e => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursorDot.style.left = mouseX + 'px';
-  cursorDot.style.top  = mouseY + 'px';
+  dot.style.left  = ring.style.left  = e.clientX + 'px';
+  dot.style.top   = ring.style.top   = e.clientY + 'px';
 });
 
-function animateRing() {
-  ringX += (mouseX - ringX) * 0.12;
-  ringY += (mouseY - ringY) * 0.12;
-  cursorRing.style.left = ringX + 'px';
-  cursorRing.style.top  = ringY + 'px';
-  requestAnimationFrame(animateRing);
-}
-animateRing();
-
-/* ─── NAVBAR SCROLL EFFECT ─── */
+// ═══════════════════════════════════════════════
+// NAVBAR SCROLL
+// ═══════════════════════════════════════════════
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
-});
 
-/* ─── ACTIVE NAV LINK ─── */
-window.addEventListener('scroll', () => {
-  const sections  = document.querySelectorAll('section[id]');
-  const navLinks  = document.querySelectorAll('.nav-links a');
+  // active nav link
+  const sections = document.querySelectorAll('section[id]');
   let current = '';
   sections.forEach(s => {
     if (window.scrollY >= s.offsetTop - 120) current = s.id;
   });
-  navLinks.forEach(a => {
+  document.querySelectorAll('.nav-links a').forEach(a => {
     a.classList.toggle('active', a.getAttribute('href') === '#' + current);
   });
 });
 
-/* ─── MOBILE MENU ─── */
+// ═══════════════════════════════════════════════
+// HAMBURGER / MOBILE MENU
+// ═══════════════════════════════════════════════
 const hamburger  = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
-
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-});
-
+hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 document.querySelectorAll('.mobile-link').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    document.body.style.overflow = '';
-  });
+  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
 });
 
-/* ─── SCROLL FADE-IN ─── */
+// ═══════════════════════════════════════════════
+// FADE-IN ON SCROLL
+// ═══════════════════════════════════════════════
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      // stagger children
-      e.target.querySelectorAll('.skill-group, .project-card, .org-card, .volunteer-card, .cert-card').forEach((child, i) => {
-        child.style.transitionDelay = (i * 0.08) + 's';
-        child.classList.add('visible');
-      });
-    }
-  });
-}, { threshold: 0.08 });
-
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-/* ─── GALLERY SLIDER ─── */
-document.querySelectorAll('.gallery-wrapper').forEach(wrapper => {
-  const slider = wrapper.querySelector('.gallery-slider');
-  const next   = wrapper.querySelector('.gallery-btn.next');
-  const prev   = wrapper.querySelector('.gallery-btn.prev');
-
-  if (next) next.addEventListener('click', () => slider.scrollBy({ left: 220, behavior: 'smooth' }));
-  if (prev) prev.addEventListener('click', () => slider.scrollBy({ left: -220, behavior: 'smooth' }));
-});
-
-/* ─── LIGHTBOX ─── */
-const lightbox    = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-
-function openLightbox(src) {
-  lightboxImg.src = src;
-  lightbox.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox() {
-  lightbox.classList.remove('active');
-  document.body.style.overflow = '';
-  lightboxImg.src = '';
+// ═══════════════════════════════════════════════
+// GALLERY SLIDER
+// ═══════════════════════════════════════════════
+function slideGallery(btn, dir) {
+  const slider = btn.closest('.gallery-wrapper').querySelector('.gallery-slider');
+  slider.scrollBy({ left: dir * 220, behavior: 'smooth' });
 }
 
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    closeLightbox();
-    closeProjectModal();
-  }
-});
-
-/* ─── PROJECT MODAL DATA ─── */
+// ═══════════════════════════════════════════════
+// PROJECT DATA
+// ═══════════════════════════════════════════════
 const projectData = {
   simonev: {
     client: 'Client: TK Almuhajirin Dotamana',
-    name:   'SIMONEV',
-    role:   'Fullstack Developer · 2-person team',
-    desc:   'An early childhood development monitoring and evaluation system built for a kindergarten. The platform enables teachers to record and track child development across multiple developmental aspects, while parents can monitor their child\'s progress in real time. Admins manage all data, users, and reports from a centralized dashboard.',
-    techs:  ['Next.js', 'Laravel', 'MySQL', 'REST API', 'TypeScript'],
-    // ← Add your actual screenshot paths here:
+    name: 'SIMONEV',
+    role: 'Fullstack Developer · 2-person team',
+    desc: 'An early childhood development monitoring and evaluation system built for a kindergarten. Teachers record and track child development while parents monitor progress in real time through a clean dashboard.',
+    techs: ['Next.js', 'Laravel', 'MySQL', 'REST API', 'TypeScript'],
     screenshots: [
-      // 'assets/images/simonev-1.png',
-      // 'assets/images/simonev-2.png',
-      // 'assets/images/simonev-3.png',
+      'assets/images/simonev-ss1.png',
+      'assets/images/simonev-ss2.png',
+      'assets/images/simonev-ss3.png',
+      'assets/images/simonev-ss4.png',
+      'assets/images/simonev-ss5.png',
+      'assets/images/simonev-ss6.png',
     ]
   },
   simkarin: {
     client: 'Client: PT Lancang Kuning Sukses',
-    name:   'SIMKARIN',
-    role:   'Fullstack Developer · 4-person team',
-    desc:   'A web-based employee database management system developed for a corporate client. The system streamlines employee data management, organizational structures, and document workflows. Responsible for frontend development, backend API integration, and database architecture.',
-    techs:  ['Next.js', 'Laravel', 'MySQL', 'REST API'],
+    name: 'SIMKARIN',
+    role: 'Fullstack Developer · 4-person team',
+    desc: 'A web-based employee database management system for a corporate client. Streamlines employee data, organizational structures, and document workflows with a centralized dashboard.',
+    techs: ['Next.js', 'Laravel', 'MySQL', 'REST API'],
     screenshots: [
-      // 'assets/images/simkarin-1.png',
-      // 'assets/images/simkarin-2.png',
-      // 'assets/images/simkarin-3.png',
+      'assets/images/simkarin-ss1.png',
+      'assets/images/simkarin-ss2.png',
+      'assets/images/simkarin-ss3.png',
+      'assets/images/simkarin-ss4.png',
+      'assets/images/simkarin-ss5.png',
+      'assets/images/simkarin-ss6.png',
     ]
   },
   leportrait: {
     client: 'Academic Project',
-    name:   'Le-Portrait',
-    role:   'Fullstack Developer · 4-person team',
-    desc:   'A camera and accessories e-commerce application with complete transaction management capabilities. Features include product catalog, shopping cart, order processing, payment integration, and an admin panel for order management and export. Built collaboratively with a focus on clean UX and reliable backend logic.',
-    techs:  ['Laravel', 'MySQL', 'PHP'],
+    name: 'Le-Portrait',
+    role: 'Fullstack Developer · 4-person team',
+    desc: 'A camera and accessories e-commerce application with complete transaction management. Features product catalog, shopping cart, order processing, payment integration, and admin panel.',
+    techs: ['Laravel', 'MySQL', 'PHP'],
     screenshots: [
-      // 'assets/images/leportrait-1.png',
-      // 'assets/images/leportrait-2.png',
-      // 'assets/images/leportrait-3.png',
+      'assets/images/leportrait-ss1.png',
+      'assets/images/leportrait-ss2.png',
+      'assets/images/leportrait-ss3.png',
+      'assets/images/leportrait-ss4.png',
+      'assets/images/leportrait-ss5.png',
+      'assets/images/leportrait-ss6.png',
     ]
   }
 };
 
-/* ─── PROJECT MODAL OPEN / CLOSE ─── */
-const projectModal = document.getElementById('projectModal');
+// ═══════════════════════════════════════════════
+// PROJECT MODAL
+// ═══════════════════════════════════════════════
+let currentProjectKey = null;
 
 function openProjectModal(key) {
   const data = projectData[key];
   if (!data) return;
+  currentProjectKey = key;
 
   document.getElementById('modal-client').textContent = data.client;
   document.getElementById('modal-name').textContent   = data.name;
   document.getElementById('modal-role').textContent   = data.role;
   document.getElementById('modal-desc').textContent   = data.desc;
 
-  // Tech badges
+  // Techs
   const techsEl = document.getElementById('modal-techs');
   techsEl.innerHTML = data.techs.map(t => `<span class="tech-badge">${t}</span>`).join('');
 
-  // Screenshots — fill slots or show placeholder
-  const slots = ['modal-ss-1', 'modal-ss-2', 'modal-ss-3'];
-  slots.forEach((id, i) => {
-    const slot = document.getElementById(id);
-    const src  = data.screenshots[i];
-    if (src) {
-      slot.innerHTML = `<img src="${src}" alt="Screenshot ${i+1}" onclick="openLightbox('${src}')"/>`;
-    } else {
-      slot.innerHTML = `
-        <div class="ss-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <path d="M21 15l-5-5L5 21"/>
-          </svg>
-          <span>Screenshot coming soon</span>
-        </div>`;
-    }
-  });
+  // Screenshots
+  const grid = document.getElementById('modal-ss-grid');
+  grid.innerHTML = data.screenshots.map((src, i) => `
+    <div class="ss-slot">
+      <img
+        src="${src}"
+        alt="Screenshot ${i + 1}"
+        onclick="openLightboxProject('${key}', ${i})"
+        onerror="this.parentElement.innerHTML='<div class=ss-placeholder><svg viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'currentColor\\' stroke-width=\\'1.5\\'><rect x=\\'3\\' y=\\'3\\' width=\\'18\\' height=\\'18\\' rx=\\'2\\'/><circle cx=\\'8.5\\' cy=\\'8.5\\' r=\\'1.5\\'/><path d=\\'M21 15l-5-5L5 21\\'/></svg><span>Screenshot ${i + 1}</span></div>'"
+      />
+    </div>
+  `).join('');
 
-  projectModal.classList.add('active');
+  const modal = document.getElementById('projectModal');
+  modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
 function closeProjectModal() {
-  projectModal.classList.remove('active');
+  document.getElementById('projectModal').classList.remove('active');
   document.body.style.overflow = '';
 }
 
-/* ─── SMOOTH ANCHOR SCROLL ─── */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', e => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
+// Close modal on ESC
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeProjectModal();
+    closeLightbox();
+  }
 });
 
-/* ─── SKILL TAG RIPPLE ─── */
-document.querySelectorAll('.skill-tag').forEach(tag => {
-  tag.addEventListener('click', function(e) {
-    const ripple = document.createElement('span');
-    ripple.style.cssText = `
-      position:absolute; border-radius:50%;
-      background:rgba(255,255,255,0.4);
-      transform:scale(0); animation:ripple 0.5s linear;
-      pointer-events:none; width:60px; height:60px;
-      top:${e.offsetY-30}px; left:${e.offsetX-30}px;
-    `;
-    this.style.position = 'relative';
-    this.style.overflow = 'hidden';
-    this.appendChild(ripple);
-    setTimeout(() => ripple.remove(), 500);
-  });
-});
+// ═══════════════════════════════════════════════
+// LIGHTBOX — PROJECT SCREENSHOTS (dengan navigasi)
+// ═══════════════════════════════════════════════
+let lightboxImages = [];
+let lightboxIndex  = 0;
 
-// Ripple keyframe
-const style = document.createElement('style');
-style.textContent = `@keyframes ripple { to { transform:scale(2.5); opacity:0; } }`;
-document.head.appendChild(style);
+function openLightboxProject(projectKey, index) {
+  const data = projectData[projectKey];
+  if (!data) return;
+
+  lightboxImages = data.screenshots;
+  lightboxIndex  = index;
+  _showLightbox();
+}
+
+// ═══════════════════════════════════════════════
+// LIGHTBOX — SIMPLE (gallery, doc, cert) tanpa navigasi
+// ═══════════════════════════════════════════════
+function openLightboxSimple(src) {
+  lightboxImages = [src];
+  lightboxIndex  = 0;
+  _showLightbox();
+}
+
+function _showLightbox() {
+  const lb      = document.getElementById('lightbox');
+  const img     = document.getElementById('lightbox-img');
+  const counter = document.getElementById('lightbox-counter');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+
+  img.src = lightboxImages[lightboxIndex];
+
+  const multiple = lightboxImages.length > 1;
+  counter.style.display = multiple ? 'block' : 'none';
+  prevBtn.style.display  = multiple ? 'flex'  : 'none';
+  nextBtn.style.display  = multiple ? 'flex'  : 'none';
+
+  if (multiple) {
+    counter.textContent = `${lightboxIndex + 1} / ${lightboxImages.length}`;
+  }
+
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function navigateLightbox(dir) {
+  lightboxIndex = (lightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
+  _showLightbox();
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  // Kalau lightbox ditutup dari dalam project modal, jangan buka scroll
+  if (!document.getElementById('projectModal').classList.contains('active')) {
+    document.body.style.overflow = '';
+  }
+}
