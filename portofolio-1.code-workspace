@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../frontend/simonev-frontend"
+		},
+		{
+			"path": "../../simonev-backend/simonev-backend"
+		},
+		{
+			"name": "hrddatabasefrontend",
+			"path": "../../hrddatabasefronend/hrddatabasefrontend"
+		},
+		{
+			"name": "Le-portrait",
+			"path": "../../New folder/Le-portrait"
+		},
+		{
+			"path": "C:/backup hrddatabasefrontend - Copy"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "portofolio-1"
+	}
+}

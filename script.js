@@ -15,7 +15,6 @@ const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 
-  // active nav link
   const sections = document.querySelectorAll('section[id]');
   let current = '';
   sections.forEach(s => {
@@ -41,7 +40,7 @@ document.querySelectorAll('.mobile-link').forEach(link => {
 // ═══════════════════════════════════════════════
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
+}, { threshold: 0.08 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
 // ═══════════════════════════════════════════════
@@ -60,7 +59,7 @@ const projectData = {
     client: 'Client: TK Almuhajirin Dotamana',
     name: 'SIMONEV',
     role: 'Fullstack Developer · 2-person team',
-    desc: 'An early childhood development monitoring and evaluation system built for a kindergarten. Teachers record and track child development while parents monitor progress in real time through a clean dashboard.',
+    desc: 'Developed a web-based system for monitoring and evaluating early childhood development. The platform enables teachers to efficiently record, manage, and assess children developmental progress through a centralized digital dashboard. It also provides parents with access to periodic development reports, improving transparency and communication between schools and families. The system streamlines data management, automates report generation, and supports data-driven decision-making for educational institutions. ',
     techs: ['Next.js', 'Laravel', 'MySQL', 'REST API', 'TypeScript'],
     screenshots: [
       'assets/images/simonev-ss1.png',
@@ -75,22 +74,37 @@ const projectData = {
     client: 'Client: PT Lancang Kuning Sukses',
     name: 'SIMKARIN',
     role: 'Fullstack Developer · 4-person team',
-    desc: 'A web-based employee database management system for a corporate client. Streamlines employee data, organizational structures, and document workflows with a centralized dashboard.',
-    techs: ['Next.js', 'Laravel', 'MySQL', 'REST API'],
+    desc: 'Developed a web-based employee management system for PT Lancang Kuning Sukses with role-based access control. HR users can manage employee records, organizational data, and documents, while Management & IT users have view-only access for monitoring and reporting. Built frontend and backend functionalities, including authentication, employee management, document handling, and dashboard features.',
+    techs: ['Next.js', 'React', 'Node.js', 'Express.js', 'Tailwind CSS', 'MySQL', 'REST API'],
     screenshots: [
       'assets/images/simkarin-ss1.png',
       'assets/images/simkarin-ss2.png',
       'assets/images/simkarin-ss3.png',
       'assets/images/simkarin-ss4.png',
-      'assets/images/simkarin-ss5.png',
       'assets/images/simkarin-ss6.png',
+      'assets/images/simkarin-ss7.png',
+    ]
+  },
+  purebeauty: {
+    client: 'Academic Project · Semester 1',
+    name: 'PureBeauty',
+    role: 'Fullstack Developer · Solo project',
+    desc: 'A web-based skincare e-commerce platform with product catalog, shopping cart, user authentication, and order management. Built as a first-semester academic project to explore full web development workflow from frontend to backend.',
+    techs: ['Laravel', 'MySQL', 'PHP', 'Bootstrap'],
+    screenshots: [
+      'assets/images/purebeauty-ss1.png',
+      'assets/images/purebeauty-ss2.png',
+      'assets/images/purebeauty-ss3.png',
+      'assets/images/purebeauty-ss4.png',
+      'assets/images/purebeauty-ss5.png',
+      'assets/images/purebeauty-ss6.png',
     ]
   },
   leportrait: {
     client: 'Academic Project',
     name: 'Le-Portrait',
     role: 'Fullstack Developer · 4-person team',
-    desc: 'A camera and accessories e-commerce application with complete transaction management. Features product catalog, shopping cart, order processing, payment integration, and admin panel.',
+    desc: 'Developed a web-based e-commerce platform for camera products and accessories. Implemented product catalog management, shopping cart functionality, order processing, payment handling, and an administrative dashboard for managing products, customers, and transactions.',
     techs: ['Laravel', 'MySQL', 'PHP'],
     screenshots: [
       'assets/images/leportrait-ss1.png',
@@ -118,11 +132,9 @@ function openProjectModal(key) {
   document.getElementById('modal-role').textContent   = data.role;
   document.getElementById('modal-desc').textContent   = data.desc;
 
-  // Techs
   const techsEl = document.getElementById('modal-techs');
   techsEl.innerHTML = data.techs.map(t => `<span class="tech-badge">${t}</span>`).join('');
 
-  // Screenshots
   const grid = document.getElementById('modal-ss-grid');
   grid.innerHTML = data.screenshots.map((src, i) => `
     <div class="ss-slot">
@@ -135,8 +147,7 @@ function openProjectModal(key) {
     </div>
   `).join('');
 
-  const modal = document.getElementById('projectModal');
-  modal.classList.add('active');
+  document.getElementById('projectModal').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
@@ -145,7 +156,6 @@ function closeProjectModal() {
   document.body.style.overflow = '';
 }
 
-// Close modal on ESC
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     closeProjectModal();
@@ -154,7 +164,7 @@ document.addEventListener('keydown', e => {
 });
 
 // ═══════════════════════════════════════════════
-// LIGHTBOX — PROJECT SCREENSHOTS (dengan navigasi)
+// LIGHTBOX
 // ═══════════════════════════════════════════════
 let lightboxImages = [];
 let lightboxIndex  = 0;
@@ -162,15 +172,11 @@ let lightboxIndex  = 0;
 function openLightboxProject(projectKey, index) {
   const data = projectData[projectKey];
   if (!data) return;
-
   lightboxImages = data.screenshots;
   lightboxIndex  = index;
   _showLightbox();
 }
 
-// ═══════════════════════════════════════════════
-// LIGHTBOX — SIMPLE (gallery, doc, cert) tanpa navigasi
-// ═══════════════════════════════════════════════
 function openLightboxSimple(src) {
   lightboxImages = [src];
   lightboxIndex  = 0;
@@ -206,7 +212,6 @@ function navigateLightbox(dir) {
 
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('active');
-  // Kalau lightbox ditutup dari dalam project modal, jangan buka scroll
   if (!document.getElementById('projectModal').classList.contains('active')) {
     document.body.style.overflow = '';
   }
