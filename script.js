@@ -14,7 +14,6 @@ document.addEventListener('mousemove', e => {
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
-
   const sections = document.querySelectorAll('section[id]');
   let current = '';
   sections.forEach(s => {
@@ -44,7 +43,30 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
 // ═══════════════════════════════════════════════
-// GALLERY SLIDER
+// SKILL CARDS DRAG SCROLL
+// ═══════════════════════════════════════════════
+document.querySelectorAll('[data-drag-scroll]').forEach(track => {
+  let isDown = false, startX, scrollLeft;
+
+  track.addEventListener('mousedown', e => {
+    isDown = true;
+    track.style.cursor = 'grabbing';
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+  track.addEventListener('mouseleave', () => { isDown = false; track.style.cursor = 'grab'; });
+  track.addEventListener('mouseup', () => { isDown = false; track.style.cursor = 'grab'; });
+  track.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    track.scrollLeft = scrollLeft - walk;
+  });
+});
+
+// ═══════════════════════════════════════════════
+// GALLERY SLIDER (tombol prev/next)
 // ═══════════════════════════════════════════════
 function slideGallery(btn, dir) {
   const slider = btn.closest('.gallery-wrapper').querySelector('.gallery-slider');
@@ -59,7 +81,7 @@ const projectData = {
     client: 'Client: TK Almuhajirin Dotamana',
     name: 'SIMONEV',
     role: 'Fullstack Developer · 2-person team',
-    desc: 'Developed a web-based system for monitoring and evaluating early childhood development. The platform enables teachers to efficiently record, manage, and assess children developmental progress through a centralized digital dashboard. It also provides parents with access to periodic development reports, improving transparency and communication between schools and families. The system streamlines data management, automates report generation, and supports data-driven decision-making for educational institutions. ',
+    desc: 'Developed a web-based system for monitoring and evaluating early childhood development. The platform enables teachers to efficiently record, manage, and assess children\'s developmental progress through a centralized digital dashboard. It also provides parents with access to periodic development reports, improving transparency and communication between schools and families. The system streamlines data management, automates report generation, and supports data-driven decision-making for educational institutions.',
     techs: ['Next.js', 'Laravel', 'MySQL', 'REST API', 'TypeScript'],
     screenshots: [
       'assets/images/simonev-ss1.png',
@@ -89,7 +111,7 @@ const projectData = {
     client: 'Academic Project · Semester 1',
     name: 'PureBeauty',
     role: 'Fullstack Developer · Solo project',
-    desc: 'A web-based skincare e-commerce platform with product catalog, shopping cart, user authentication, and order management. Built as a first-semester academic project to explore full web development workflow from frontend to backend.',
+    desc: 'Developed a full-stack skincare e-commerce web application as a first-semester academic project to explore end-to-end web development. The platform includes product catalog management, shopping cart functionality, user authentication, and order management, providing a complete online shopping experience from frontend to backend.',
     techs: ['Laravel', 'MySQL', 'PHP', 'Bootstrap'],
     screenshots: [
       'assets/images/purebeauty-ss1.png',
